@@ -1,3 +1,4 @@
+import Input from "./Input"
 export default function NewProject(){
     return(
         <>
@@ -16,10 +17,7 @@ export default function NewProject(){
                 <h3 className="text-4xl font-bold">
                     Tasks
                 </h3>
-                <div className="my-8 flex gap-4">
-                    <input type="text" className="bg-stone-200 rounded border-black border-2 px-2 py-1 w-2/6" />
-                    <button htmlFor="Task" className="hover:text-red-500">Add Task</button>
-                </div>
+                <Input />
                 <div className="my-8 flex">
                     <textarea name="textarea" id="textarea" cols="30" rows="4" className="bg-stone-200 rounded-s border-black border-r-0 border-2 px-2 py-1 w-3/6"></textarea>
                     <button htmlFor="Task" className="bg-stone-200 rounded border-black border-l-0 border-2 rounded-r px-2 hover:bg-stone-300">Clear</button>
