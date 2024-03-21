@@ -1,8 +1,16 @@
-export default function Input (){
+export default function Input ({label, textarea, ...props}){
+    const classes = 'w-full p-1 border-b-2 rounded-sm border-stone-300 bg-stone-200 text-stone-600 focus:outline-none focus:border-stone-600'
+
     return(
-        <div className="my-8 flex gap-4">
-            <input type="text" className="bg-stone-200 rounded border-black border-2 px-2 py-1 w-2/6" />
-            <button htmlFor="Task" className="hover:text-red-500">Add Task</button>
-        </div>
+        <p className="flex flex-col gap-1 my-4">
+            <form action=""  className="mt-4 text-right">
+            <label className="text-sm font-bold uppercase text-stone-500">{label}</label>
+                {textarea ? 
+                <textarea {...props}  className={classes}></textarea> 
+                : 
+                <input  className={classes} type="text" {...props}
+                />}
+            </form>
+        </p>
     )
 }

@@ -3,10 +3,14 @@ import NewProject from "./components/NewProject";
 import Sidebar from "./components/Sidebar";
 
 function App() {
+
+  
+
   return (
     <>
-    <Sidebar/>
-      <main className="h-screen px-10 py-8 ms-72 overflow-hidden gap-8 w-2/3">
+      <main className="h-screen my-8 flex gap-8">
+        <Sidebar/>
+        {/* <Form /> */}
         <NewProject/>
       </main>
     </>
