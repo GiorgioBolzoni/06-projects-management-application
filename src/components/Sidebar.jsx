@@ -1,5 +1,5 @@
 import Button from "./Button";
-export default function Sidebar({onStartAddProject, projects}){
+export default function Sidebar({onStartAddProject, onSelectProject, selectedProjectId, projects}){
 
     return(
         <>
@@ -13,7 +13,26 @@ export default function Sidebar({onStartAddProject, projects}){
                 </Button>
                 <ul className="mt-8">
                     
-                        {projects.map(project => <li key={project.id}><button  className=" w-full text-left border-2 rounded px-4 font-semibold cursor-pointer py-2 border-stone-400 text-stone-400 hover:bg-stone-700 hover:text-stone-200 hover:border-transparent my-1">{project.title}</button></li>)}
+                        {projects.map(project => {
+                            let cssClasses = 'w-full text-left border-2 rounded px-4 font-semibold cursor-pointer py-2 border-stone-400 hover:bg-stone-700 hover:text-stone-200 hover:border-transparent my-1'
+
+                            if (project.id === selectedProjectId) {
+                                cssClasses +=' bg-stone-800 text-stone-200 hover:bg-stone-600 hover:text-stone-100'
+                            } else {
+                                cssClasses +=' text-stone-400'
+                            }
+
+
+                            return (
+                                <li key={project.id}>
+                                    <button 
+                                        onClick={() => onSelectProject(project.id)}  
+                                        className={cssClasses}>
+                                            {project.title}
+                                    </button>
+                                </li>
+                            )
+                        })}
                     
                 </ul>
             </aside>
