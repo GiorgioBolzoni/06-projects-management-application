@@ -1,5 +1,5 @@
 import Input from "./Input"
-export default function Project(){
+export default function Project({}) {
     return(
         <section>
             <div className="border-b-2 border-stone-400 pb-10 mb-10">
@@ -7,14 +7,12 @@ export default function Project(){
                     <h1 className="my-8 text-center text-5xl font-bold">TASK TITLE</h1>
                     <button className="bg-stone-900 text-stone-50 rounded px-10 h-10 hover:bg-gradient-to-r from-blue-900 to-yellow-600">Delete</button>
                 </div>
-                <Input label='Title' />
-                <Input label='Description' textarea/>
-                <Input label='Due Date' />
-                {/* <p className="text-stone-400 mb-4">
-                    data creazione mm gg,aaaa
+                
+                <p className="text-stone-400 mb-4">
+                    {}
                 </p>
-                <p>text1</p>
-                <p className="mt-8">text2</p> */}
+                <p>{}</p>
+                <p className="mt-8">{}</p>
             </div>
             <div className="w-dvw pb-10 mb-10">
                 <h3 className="text-4xl font-bold">
